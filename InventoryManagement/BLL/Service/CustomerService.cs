@@ -42,7 +42,7 @@ namespace InventoryManagement.BLL.Service
             var customer = _customerRepository.GetCustomerById(customerId);
             if (customer != null)
             {
-                _customerRepository.DeleteCustomer(customer);
+                _customerRepository.DeleteCustomer(customerId);
             }
         }
     }

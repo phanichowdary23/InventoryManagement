@@ -42,9 +42,28 @@ namespace InventoryManagement.DAL.Repository
             return _context.Customers.ToList();
         }
 
-        public void DeleteCustomer(Customer customer)
+        public Customer GetByUsername(string username)
         {
-            throw new NotImplementedException();
+            return _context.Customers.Find(username);
         }
+        public void Register(string username, string password, string email, string fullname)
+        {
+            Customer user = new Customer();
+            user.Username = username;
+            user.Password = password;
+            user.Email = email;
+            user.Name = fullname;
+            _context.Customers.Add(user);
+            _context.SaveChanges();
+        }
+        public Customer Login(string username, string password)
+        {
+            return _context.Customers.FirstOrDefault(x => x.Username == username && x.Password == password);
+        }
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
+
     }
 }

@@ -10,6 +10,10 @@ namespace InventoryManagement.BLL.DTOs
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
 
+        public string Username { get; set; }
+
+        public string Password { get; set; }
+
         public static explicit operator CustomerDTO(Customer customer)
         {
             return new CustomerDTO
@@ -18,7 +22,9 @@ namespace InventoryManagement.BLL.DTOs
                 Name = customer.Name,
                 Email = customer.Email,
                 Address = customer.Address,
-                PhoneNumber = customer.PhoneNumber
+                PhoneNumber = customer.PhoneNumber,
+                Username = customer.Username,
+                Password = customer.Password
             };
         }
 
@@ -30,7 +36,9 @@ namespace InventoryManagement.BLL.DTOs
                 Name = customerDTO.Name,
                 Email = customerDTO.Email,
                 Address = customerDTO.Address,
-                PhoneNumber = customerDTO.PhoneNumber
+                PhoneNumber = customerDTO.PhoneNumber,
+                Username = customerDTO.Username,
+                Password = customerDTO.Password
             };
         }
     }
