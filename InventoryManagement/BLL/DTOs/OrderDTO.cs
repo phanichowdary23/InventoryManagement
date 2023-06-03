@@ -10,8 +10,9 @@ namespace InventoryManagement.BLL.DTOs
         public int Quantity { get; set; }
         public decimal TotalPrice { get; set; }
 
-        public static explicit operator OrderDTO(Order order)
+        public static implicit operator OrderDTO(Order order)
         {
+            if (order == null) return null;
             return new OrderDTO
             {
                 Id = order.Id,
@@ -24,6 +25,7 @@ namespace InventoryManagement.BLL.DTOs
 
         public static explicit operator Order(OrderDTO orderDTO)
         {
+            if (orderDTO == null) return null;
             return new Order
             {
                 Id = orderDTO.Id,

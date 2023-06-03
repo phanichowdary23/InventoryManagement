@@ -11,8 +11,9 @@ namespace InventoryManagement.BLL.DTOs
         public int Quantity { get; set; }
         public int Stock { get; set; }
 
-        public static explicit operator ProductDTO(Product product)
+        public static implicit operator ProductDTO(Product product)
         {
+            if (product == null) return null;
             return new ProductDTO
             {
                 ProductId = product.ProductId,
@@ -26,6 +27,7 @@ namespace InventoryManagement.BLL.DTOs
 
         public static explicit operator Product(ProductDTO productDTO)
         {
+            if (productDTO == null) return null;
             return new Product
             {
                 ProductId = productDTO.ProductId,

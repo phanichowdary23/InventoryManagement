@@ -14,8 +14,9 @@ namespace InventoryManagement.BLL.DTOs
 
         public string Password { get; set; }
 
-        public static explicit operator CustomerDTO(Customer customer)
+        public static implicit operator CustomerDTO(Customer customer)
         {
+            if (customer == null) return null;
             return new CustomerDTO
             {
                 Id = customer.Id,
@@ -30,6 +31,7 @@ namespace InventoryManagement.BLL.DTOs
 
         public static explicit operator Customer(CustomerDTO customerDTO)
         {
+            if (customerDTO == null) return null;
             return new Customer
             {
                 Id = customerDTO.Id,

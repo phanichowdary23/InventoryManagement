@@ -11,7 +11,7 @@ namespace InventoryManagement.BLL.DTOs
         public string FullName { get; set; }
         public string Email { get; set; }
 
-        public static explicit operator AdminDTO(Admin admin)
+        public static implicit operator AdminDTO(Admin admin)
         {
             if (admin == null) return null;
             return new AdminDTO
