@@ -9,6 +9,8 @@ namespace InventoryManagement.BLL.DTOs
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
+
+        public ICollection<Order> Orders { get; set; }
         public int Stock { get; set; }
 
         public static implicit operator ProductDTO(Product product)
@@ -21,7 +23,8 @@ namespace InventoryManagement.BLL.DTOs
                 Description = product.Description,
                 Price = product.Price,
                 Quantity = product.Quantity,
-                Stock = product.Stock
+                Stock = product.Stock,
+                Orders = product.Orders
             };
         }
 
@@ -35,7 +38,8 @@ namespace InventoryManagement.BLL.DTOs
                 Description = productDTO.Description,
                 Price = productDTO.Price,
                 Quantity = productDTO.Quantity,
-                Stock = productDTO.Stock
+                Stock = productDTO.Stock,
+                Orders = productDTO.Orders
             };
         }
     }

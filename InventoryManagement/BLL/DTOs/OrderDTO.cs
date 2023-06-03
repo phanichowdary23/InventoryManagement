@@ -7,6 +7,8 @@ namespace InventoryManagement.BLL.DTOs
         public int Id { get; set; }
         public int ProductId { get; set; }
         public DateTime OrderDate { get; set; }
+
+        public ICollection<Product> Products { get; set; }
         public int Quantity { get; set; }
         public decimal TotalPrice { get; set; }
 
@@ -19,7 +21,8 @@ namespace InventoryManagement.BLL.DTOs
                 ProductId = order.ProductId,
                 OrderDate = order.OrderDate,
                 Quantity = order.Quantity,
-                TotalPrice = order.TotalPrice
+                TotalPrice = order.TotalPrice,
+                Products = order.Products
             };
         }
 
@@ -32,7 +35,8 @@ namespace InventoryManagement.BLL.DTOs
                 ProductId = orderDTO.ProductId,
                 OrderDate = orderDTO.OrderDate,
                 Quantity = orderDTO.Quantity,
-                TotalPrice = orderDTO.TotalPrice
+                TotalPrice = orderDTO.TotalPrice,
+                Products = orderDTO.Products
             };
         }
     }

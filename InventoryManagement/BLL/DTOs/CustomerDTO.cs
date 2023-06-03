@@ -10,6 +10,8 @@ namespace InventoryManagement.BLL.DTOs
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
 
+        public virtual ICollection<Order> Orders { get; set; }
+
         public string Username { get; set; }
 
         public string Password { get; set; }
@@ -25,7 +27,8 @@ namespace InventoryManagement.BLL.DTOs
                 Address = customer.Address,
                 PhoneNumber = customer.PhoneNumber,
                 Username = customer.Username,
-                Password = customer.Password
+                Password = customer.Password,
+                Orders = customer.Orders
             };
         }
 
@@ -40,7 +43,8 @@ namespace InventoryManagement.BLL.DTOs
                 Address = customerDTO.Address,
                 PhoneNumber = customerDTO.PhoneNumber,
                 Username = customerDTO.Username,
-                Password = customerDTO.Password
+                Password = customerDTO.Password,
+                Orders = customerDTO.Orders
             };
         }
     }
