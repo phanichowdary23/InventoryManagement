@@ -48,5 +48,10 @@ namespace InventoryManagement.DAL.Repository
                 .Include(o => o.Customer)
                 .ToList();
         }
+
+        public void DeleteOrder(Order order)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

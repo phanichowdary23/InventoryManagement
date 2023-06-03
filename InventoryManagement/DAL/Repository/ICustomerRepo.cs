@@ -10,5 +10,6 @@ namespace InventoryManagement.DAL.Repository
         void DeleteCustomer(int customerId);
         Customer GetCustomerById(int customerId);
         List<Customer> GetAllCustomers();
+        void DeleteCustomer(Customer customer);
     }
 }

@@ -41,5 +41,10 @@ namespace InventoryManagement.DAL.Repository
         {
             return _context.Customers.ToList();
         }
+
+        public void DeleteCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

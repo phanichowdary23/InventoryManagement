@@ -10,5 +10,6 @@ namespace InventoryManagement.DAL.Repository
         void DeleteOrder(int orderId);
         Order GetOrderById(int orderId);
         List<Order> GetAllOrders();
+        void DeleteOrder(Order order);
     }
 }

@@ -10,5 +10,6 @@ namespace InventoryManagement.DAL.Repository
         void DeleteProduct(int productId);
         Product GetProductById(int productId);
         List<Product> GetAllProducts();
+        void DeleteProduct(Product product);
     }
 }

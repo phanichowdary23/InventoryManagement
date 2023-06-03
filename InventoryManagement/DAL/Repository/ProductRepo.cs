@@ -41,5 +41,10 @@ namespace InventoryManagement.DAL.Repository
         {
             return _context.Products.ToList();
         }
+
+        public void DeleteProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

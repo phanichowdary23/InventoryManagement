@@ -20,6 +20,9 @@ namespace InventoryManagement.DAL.Models
         [Required]
         public int Quantity { get; set; }
 
+        [Required]
+        public int Stock { get; set; }
+
         public ICollection<Order> Orders { get; set; }
     }
 }
