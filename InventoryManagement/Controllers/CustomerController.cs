@@ -16,14 +16,14 @@ namespace InventoryManagement.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<CustomerDTO>> GetAllCustomers()
+        public IActionResult GetAllCustomers()
         {
             var customers = _customerService.GetAllCustomers();
             return Ok(customers);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<CustomerDTO> GetCustomerById(int id)
+        public IActionResult GetCustomerById(int id)
         {
             var customer = _customerService.GetCustomerById(id);
             if (customer == null)
@@ -52,7 +52,7 @@ namespace InventoryManagement.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public IActionResult DeleteCustomer(int id)
         {
             _customerService.DeleteCustomer(id);

@@ -15,8 +15,8 @@ namespace InventoryManagement.BLL.Service
 
         public IEnumerable<CustomerDTO> GetAllCustomers()
         {
-            var customers = _customerRepository.GetAllCustomers();
-            return customers.Select(c => (CustomerDTO)c).ToList();
+            return (IEnumerable<CustomerDTO>)_customerRepository.GetAllCustomers();
+       
         }
 
         public CustomerDTO GetCustomerById(int customerId)
@@ -25,10 +25,10 @@ namespace InventoryManagement.BLL.Service
             return (CustomerDTO)customer;
         }
 
-        public void AddCustomer(CustomerDTO customerDTO)
+        public void AddCustomer(CustomerDTO customer)
         {
-            var customer = (Customer)customerDTO;
-            _customerRepository.AddCustomer(customer);
+            
+            _customerRepository.AddCustomer((Customer)customer);
         }
 
         public void UpdateCustomer(CustomerDTO customerDTO)

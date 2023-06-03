@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace InventoryManagement.Controllers
 {
         [ApiController]
-        [Route("api/users")]
+        [Route("api/customers")]
         public class AuthController : ControllerBase
         {
             private readonly IAuthService authservice;

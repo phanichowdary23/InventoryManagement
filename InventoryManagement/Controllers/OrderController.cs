@@ -12,18 +12,18 @@ namespace InventoryManagement.Controllers
 
         public OrderController(IOrderService orderService)
         {
-            _orderService = orderService;
+            this._orderService = orderService;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<OrderDTO>> GetAllOrders()
+        public IActionResult GetAllOrders()
         {
             var orders = _orderService.GetAllOrders();
             return Ok(orders);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<OrderDTO> GetOrderById(int id)
+        public IActionResult GetOrderById(int id)
         {
             var order = _orderService.GetOrderById(id);
             if (order == null)

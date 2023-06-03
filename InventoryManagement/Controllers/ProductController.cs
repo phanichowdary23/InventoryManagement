@@ -12,18 +12,18 @@ namespace InventoryManagement.Controllers
 
         public ProductController(IProductService productService)
         {
-            _productService = productService;
+            this._productService = productService;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<ProductDTO>> GetAllProducts()
+        public IActionResult GetAllProducts()
         {
             var products = _productService.GetAllProducts();
             return Ok(products);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<ProductDTO> GetProductById(int id)
+        public IActionResult GetProductById(int id)
         {
             var product = _productService.GetProductById(id);
             if (product == null)
@@ -52,7 +52,7 @@ namespace InventoryManagement.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public IActionResult DeleteProduct(int id)
         {
             _productService.DeleteProduct(id);

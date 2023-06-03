@@ -16,14 +16,14 @@ namespace InventoryManagement.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<AdminDTO>> GetAllAdmins()
+        public IActionResult GetAllAdmins()
         {
             var admins = _adminService.GetAllAdmins();
             return Ok(admins);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<AdminDTO> GetAdminById(int id)
+        public IActionResult GetAdminById(int id)
         {
             var admin = _adminService.GetAdminById(id);
             if (admin == null)
