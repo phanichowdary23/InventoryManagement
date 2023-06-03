@@ -21,8 +21,7 @@ namespace InventoryManagement.BLL.Service
 
         public CustomerDTO GetCustomerById(int customerId)
         {
-            var customer = _customerRepository.GetCustomerById(customerId);
-            return (CustomerDTO)customer;
+            return (CustomerDTO)_customerRepository.GetCustomerById(customerId);
         }
 
         public void AddCustomer(CustomerDTO customer)
